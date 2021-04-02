@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package divsearch;
+option go_package="./divsearchpb";
+
+message divsearchRequest{
+    int32 number = 1;
+}
+
+message divsearchResponse{
+    int32 result = 1;
+}
+
+service divsearchService{
+    //Unary
+    rpc DivSearch(divsearchRequest) returns (stream divsearchResponse) {};
+}

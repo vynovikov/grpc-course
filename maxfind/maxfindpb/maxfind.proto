@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package maxfind;
+option go_package="./maxfindpb";
+
+message maxfindRequest{
+    int32 numreq = 1;
+}
+
+message maxfindResponse{
+    int32 numres = 1;
+}
+
+service maxfindService{
+    //client streaming
+    rpc maxfind(stream maxfindRequest) returns (stream maxfindResponse) {};
+}

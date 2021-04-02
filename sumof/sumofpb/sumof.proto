@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package sumof;
+option go_package="./sumofpb";
+
+
+
+message Sumof{
+    int32 a = 1;
+    int32 b = 2;
+}
+
+message SumofRequest{
+    int32 val1 = 1;
+    int32 val2 = 2;
+}
+
+message SumofResponse{
+    string result = 1;
+}
+
+
+service SumofService{
+    //Unary
+    rpc Sumof(SumofRequest) returns (SumofResponse){};
+}

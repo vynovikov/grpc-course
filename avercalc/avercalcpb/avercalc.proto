@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package avercalc;
+option go_package="./avercalcpb";
+
+message avercalcRequest{
+    int32 number = 1;
+}
+
+message avercalcResponse{
+    double result = 1;
+}
+
+service avercalcService{
+    //client streaming
+    rpc avercalc(stream avercalcRequest) returns (avercalcResponse) {};
+}
