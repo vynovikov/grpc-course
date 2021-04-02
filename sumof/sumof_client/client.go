@@ -24,7 +24,7 @@ func main() {
 		Val2: int32(1)})
 
 	if err != nil {
-		log.Printf("result returns errord %V", err)
+		log.Printf("error occured while taking result %V", err)
 	}
 
 	log.Printf("result of sum is: %s", res.GetResult())
